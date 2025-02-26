@@ -113,3 +113,40 @@ body {
 .custom-link:hover {
     color: #1cb153;
 }
+
+/*skills*/
+
+.skills {
+    display: grid;
+    place-items: center;
+    align-items: center;
+    font-size: 1.5rem;
+    margin: 5rem;
+}
+.hidden {
+    opacity: 0;
+    transition: all 2s;
+}
+.hidden.show {
+    opacity: 1;
+}
+
+.skills-container .logo img {
+    height: 5rem;
+    width: 5rem;
+    margin: 1.5rem;
+}
+.skill-wrapper{
+    display: flex;
+}
+.skill-wrapper .hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+.skill-wrapper .show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
