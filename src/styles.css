@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    background-color: #001220;
+    color: white;
+    font-family: 'Prompt', sans-serif;
+}
+.wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.wave svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 146px;
+    transform: rotateY(180deg);
+}
+
+.wave .shape-fill {
+    fill: #C62368;
+}
+.about-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+    min-height: 300px;
+    padding: 100px 20vw;
+}
+.about-title {
+    display: flex;
+    > .letter {
+        font-size: 6rem;
+        font-weight: 500;
+    }
+}
+.about-overview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.about-name, .about-intro {
+    display: flex;
+    gap: 0.3rem;
+    font-size: 1.2rem;
+    white-space: nowrap;
+}
+.letter {
+    transform: translateY(100%) rotate(15deg);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+.letter.show {
+  transform: translateY(0) rotate(0);
+  opacity: 1;
+}
+.about-intro, .about-overview {
+    animation: 1s ease-in-out 0s 1 normal forwards running fade-in;
+}
