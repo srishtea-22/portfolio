@@ -55,15 +55,14 @@ body {
     font-weight: 500;
 }
 .letter {
-    transform: translateY(100%) rotate(15deg);
+    transform: translateX(-100%);
     opacity: 0;
     transition: transform 0.5s ease, opacity 0.5s ease;
 }
 .letter.show {
-  transform: translateY(0) rotate(0);
+  transform: translateX(0);
   opacity: 1;
 }
-
 .about-description {
     display: flex;
     align-items: center;

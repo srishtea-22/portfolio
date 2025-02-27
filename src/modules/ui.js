@@ -1,7 +1,8 @@
-export function animateOnLoad(selector){
+export function animateOnLoad(selector) {
     window.addEventListener("load", function() {
         setTimeout(() => {
-            document.querySelectorAll(selector).forEach(letter => {
+            document.querySelectorAll(selector).forEach((letter, index) => {
+                letter.style.transitionDelay = `${index * 0.2}s`; 
                 letter.classList.add("show");
             });
         }, 100);
