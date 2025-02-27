@@ -15,6 +15,22 @@ export const observer = new IntersectionObserver((entries) => {
         }
         else {
             entry.target.classList.remove("show");
+        };
+    });
+});
+
+let lastScrollTop = 0;
+
+export const projectObserver = new IntersectionObserver((entries) => {
+    let currentScrollTop = window.scrollY;
+
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.remove("hide");
+        } else if (currentScrollTop < lastScrollTop) {
+            entry.target.classList.add("hide");
         }
-    }) 
-})
+    });
+
+    lastScrollTop = currentScrollTop;
+});
