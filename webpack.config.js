@@ -5,7 +5,7 @@ const { type } = require("os");
 const { watchFile } = require("fs");
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   entry: "./src/index.js",
   output: {
     filename: "main.js",
